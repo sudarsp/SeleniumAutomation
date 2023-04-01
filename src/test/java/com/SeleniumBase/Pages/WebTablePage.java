@@ -25,6 +25,8 @@ public class WebTablePage {
 		WebElement tableid=driver.findElement(By.xpath("//table[@id='contactList']"));
 		
 		List<WebElement> tr= tableid.findElements(By.xpath("//table[@id='contactList']//tr"));
+		List<WebElement> tr1= tableid.findElements(By.xpath("//table[@id='contactList']//tr"));
+		System.out.println("trrrr"  +   tr.size());
 		System.out.println("trrrr"  +   tr.size());
 		for (int i=2;i<=tr.size();i++) {
 			driver.findElement(By.xpath("//table[@id='contactList']//tr["+i+"]/td/input")).click();
