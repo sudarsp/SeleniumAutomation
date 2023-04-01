@@ -39,6 +39,25 @@ public class WebTablePage {
 		return ab;
 	}
 	
+	public boolean tableNameReading1()
+	{
+		WebElement tableid=driver.findElement(By.xpath("//table[@id='contactList']"));
+		
+		List<WebElement> tr= tableid.findElements(By.xpath("//table[@id='contactList']//tr"));
+		System.out.println("trrrr"  +   tr.size());
+		for (int i=2;i<=tr.size();i++) {
+			driver.findElement(By.xpath("//table[@id='contactList']//tr["+i+"]/td/input")).click();
+			//
+		}
+		boolean ab= false;
+		for (int i=2;i<=tr.size();i++) {
+			driver.findElement(By.xpath("//table[@id='contactList']//tr["+i+"]/td")).isSelected();
+			 ab= true;
+		
+		}
+		return ab;
+	}
+	
 	public boolean tableNameReading()
 	{
 		WebElement tableid=driver.findElement(By.xpath("//table[@id='contactList']"));
